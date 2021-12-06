@@ -11,6 +11,8 @@ for (i in s) {
     fish <- rbind(fish, c(i, length(raw[raw==i])))
 }
 
+genCounts <- c(sum(fish[, 2]))      # just for graphing
+
 # this was a good solution until I ran it to 256 and ran out of memory fgjfjfds
 #fish <- unlist(read.csv("06-lanternfish/input.txt", header=FALSE))
 #for (d in 1:days) {
@@ -37,7 +39,12 @@ for (d in 1:days) {
 
     # add newborn fish
     fish[newbornReproDays + matrixOffset, 2] <- toRepro
+
+    genCounts <- append(genCounts, c(sum(fish[, 2])))       # just for graphing
 }
+
+png("06-lanternfish/plot.png")
+plot(genCounts, type="l")
 
 options(scipen = 999)       # disable scientific notation (e.g., 1.569108e+12) because JEEZ this number is big
 sum(fish[, 2])
