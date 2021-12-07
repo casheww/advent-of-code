@@ -9,7 +9,4 @@ sum(abs(crabs - avg))
 # part 2 : increasing fuel per move
 avg <- floor(mean(crabs))
 dists <- abs(crabs - avg)
-avg
-dists
-dists * (dists + 1) / 2
 sum(dists * (dists + 1) / 2)
