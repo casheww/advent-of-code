@@ -16,6 +16,11 @@ int getFileCharCount(FILE *f) {
 
 char* fileRead(char fp[], int *charCount) {
     FILE *f = fopen(fp, "r");
+    if (f == NULL) {
+        printf("ERROR CREATING FILE STREAM. Did you create the file?\n");
+        return NULL;
+    }
+
     *charCount = getFileCharCount(f);
     char *str = (char*) malloc((*charCount + 1) * sizeof(char));
     str[*charCount] = '\0';
