@@ -1,6 +1,11 @@
 #include "../helper.h"
 #include <limits.h>
 
+/* you can avoid hashmaps and such for this puzzle - 
+ * the order in which cd commands are executed is the same 
+ * as the order in which subdirs appear in the ls commands
+*/
+
 #define P1_THRESHOLD        100000
 #define TOTAL_SPACE       70000000
 #define REQUIRED_SPACE    30000000
