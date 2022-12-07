@@ -62,6 +62,17 @@ char** split(char *orig_str, char *sep, int *itemCount) {
     return strs;
 }
 
+char* substr(char *orig_str, int start, int end) {
+    int len = ABS(end - start);
+    char *str = (char*) malloc((len + 1) * sizeof(char));
+    str[len] = '\0';
+
+    for (int i = 0; i < len; i++)
+        str[i] = orig_str[start + i];
+
+    return str;
+}
+
 int sum(int *arr, int len) {
     int s = 0;
     for (int i = 0; i < len; i++)
