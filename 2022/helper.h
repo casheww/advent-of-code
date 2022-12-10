@@ -10,14 +10,14 @@
 
 
 /* returns: number of characters in file */
-int getFileCharCount(FILE *f);
+int get_file_char_count(FILE *f);
 
 /* returns: the entire contents of a file */
-char* fileRead(char fp[], int *charCount);
+char* file_read(char fp[], int *char_count);
 
 /* splits orig_str at any char from sep, 
  * returns: a pointer to an array of pointers to the resulting char arrays */
-char** split(char *orig_str, char *sep, int *itemCount);
+char** split(char *orig_str, char *sep, int *item_count);
 
 char* substr(char *orig_str, int start, int end);
 

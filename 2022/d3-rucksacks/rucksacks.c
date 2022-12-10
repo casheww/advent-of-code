@@ -7,7 +7,7 @@
 
 int main() {
     int _, lineCount;
-    char **lines = split(fileRead("input.txt", &_), "\n", &lineCount);
+    char **lines = split(file_read("input.txt", &_), "\n", &lineCount);
 
     int score1 = 0;
     int score2 = 0;

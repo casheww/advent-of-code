@@ -6,7 +6,7 @@ void try_insert_elf(int test_elf, int *top_elves);
 
 int main() {
     int _;
-    char *input = fileRead("input.txt", &_);
+    char *input = file_read("input.txt", &_);
     
     int elf_count = 0;
     int top_elves[TOP_ELF_COUNT] = {0};

@@ -8,7 +8,7 @@ int has_duplicate_chars(char *str, int len);
 
 int main() {
     int charCount;
-    char *input = fileRead("input.txt", &charCount);
+    char *input = file_read("input.txt", &charCount);
 
     int sop_start = find_unique_char_str(input, charCount, 4);
     int som_start = find_unique_char_str(input, charCount, 14);

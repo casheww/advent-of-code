@@ -8,7 +8,7 @@ result char_to_result(char c);
 
 int main() {
     int _;
-    char *input = fileRead("input.txt", &_);
+    char *input = file_read("input.txt", &_);
 
     int lineCount = 3;
     char **lines = split(input, "\n", &lineCount);

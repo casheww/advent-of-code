@@ -18,7 +18,7 @@ int smallest_suitable_dir_size = INT_MAX;
 
 int main () {
     int _, lineCount;
-    char **lines = split(fileRead("input.txt", &_), "\n", &lineCount);
+    char **lines = split(file_read("input.txt", &_), "\n", &lineCount);
 
     int i = 0;
     int used_space = calculate_dir_size(lines, lineCount, &i);

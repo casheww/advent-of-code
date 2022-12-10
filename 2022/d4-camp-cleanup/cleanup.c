@@ -2,7 +2,7 @@
 
 int main() {
     int _, pairCount;
-    char **pairs = split(fileRead("input.txt", &_), "\n", &pairCount);
+    char **pairs = split(file_read("input.txt", &_), "\n", &pairCount);
 
     int fully_containing_pairs = 0;
     int overlapping_pairs = 0;
