@@ -3,9 +3,10 @@
 #include <string.h>
 #include <math.h>
 
-#define MAX(a,b) a > b ? a : b
-#define MIN(a,b) a < b ? a : b
-#define ABS(a) a >= 0 ? a : -a;
+#define MAX(a,b) (a > b ? a : b)
+#define MIN(a,b) (a < b ? a : b)
+#define ABS(a)   (a >= 0 ? a : -a)
+#define SIGN(a)  (a == 0 ? 0 : (a > 0 ? 1 : -1))
 
 
 /* returns: number of characters in file */
