@@ -5,6 +5,7 @@ int main() {
     char **pairs = split(fileRead("input.txt", &_), "\n", &pairCount);
 
     int fully_containing_pairs = 0;
+    int overlapping_pairs = 0;
 
     for (int i = 0; i < pairCount; i++) {
         char **tasks = split(pairs[i], ",", &_);
@@ -23,7 +24,12 @@ int main() {
             if (min1 <= min0 && max0 <= max1)
                 fully_containing_pairs++;
         }
+
+        if (min0 <= min1 && min1 <= max0)
+            overlapping_pairs++;
+        else if (min1 <= min0 && min0 <= max1)
+            overlapping_pairs++;
     }
 
-    printf("%d\n", fully_containing_pairs);
+    printf("part 1: %d\npart 2: %d\n", fully_containing_pairs, overlapping_pairs);
 }
