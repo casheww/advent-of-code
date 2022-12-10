@@ -23,11 +23,7 @@ int main() {
         int crt_x = (cycle-1) % CRT_WIDTH;
         if (!crt_x)
             printf("\n");
-
-        if (ABS(crt_x - X) <= 1)
-            printf("#");
-        else
-            printf(".");
+        printf(ABS(crt_x - X) <= 1 ? "#" : ".");
 
         if (wait) {
             wait = 0;
