@@ -1,10 +1,13 @@
 #include "../helper.h"
 
+#define KNOT_COUNT 9
+
 typedef struct {
     int x;
     int y;
 } intVector2;
 
+void move_head(intVector2 *h, char *line);
 intVector2 subtract_vectors(intVector2 a, intVector2 b);
 intVector2 add_vectors(intVector2 a, intVector2 b);
 int compare_vectors(intVector2 a, intVector2 b);
@@ -12,7 +15,7 @@ int compare_vectors(intVector2 a, intVector2 b);
 
 int main() {
     int _, lineCount;
-    char **lines = split(fileRead("input.txt", &_), "\n", &lineCount);
+    char **lines = split(file_read("test.txt", &_), "\n", &lineCount);
 
     int moveCount = 0;
 
@@ -28,28 +31,12 @@ int main() {
     int unique_positions = 1;
 
     for (int i = 0; i < lineCount; i++) {
-        char **movement = split(lines[i], " ", &_);
-        printf("%s\n", lines[i]);
-        char *dir = movement[0];
-        int dist = atoi(movement[1]);
-
-        switch (dir[0])
-        {
-        case 'U':
-            h.y += dist;
-            break;
-        case 'D':
-            h.y -= dist;
-            break;
-        case 'L':
-            h.x -= dist;
-            break;
-        case 'R':
-            h.x += dist;
-            break;
-        }
-
+        move_head(&h, lines[i]);
         s = subtract_vectors(h, tail_positions[ti]);
+
+        for (int knot = 1; knot <= KNOT_COUNT; knot++) {
+
+        }
 
         while ((ABS(s.x) > 1) || (ABS(s.y) > 1)) {
             intVector2 t = tail_positions[ti];
@@ -81,6 +68,31 @@ int main() {
     }
 
     printf("%d\n", unique_positions);
+}
+
+
+void move_head(intVector2 *h, char *line) {
+    int _;
+    char **movement = split(line, " ", &_);
+    printf("%s\n", line);
+    char *dir = movement[0];
+    int dist = atoi(movement[1]);
+
+    switch (dir[0])
+    {
+    case 'U':
+        h->y += dist;
+        break;
+    case 'D':
+        h->y -= dist;
+        break;
+    case 'L':
+        h->x -= dist;
+        break;
+    case 'R':
+        h->x += dist;
+        break;
+    }
 }
 
 intVector2 subtract_vectors(intVector2 a, intVector2 b) {
