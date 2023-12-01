@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include <limits.h>
 
 #define MAX(a,b) (a > b ? a : b)
 #define MIN(a,b) (a < b ? a : b)
